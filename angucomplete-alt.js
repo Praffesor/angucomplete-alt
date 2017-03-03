@@ -87,8 +87,9 @@
           if (mousedownOn === scope.id + '_dropdown') {
             document.body.addEventListener('click', clickoutHandlerForDropdown);
           }
-        }
-        else {
+        } else if (event.target.classList.contains('angucomplete-searching')) {
+          scope.hideResults(event);
+        } else {
           mousedownOn = event.target.className;
         }
       });
